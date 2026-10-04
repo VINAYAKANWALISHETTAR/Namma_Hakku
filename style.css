@@ -15,6 +15,7 @@ section{padding:80px 0}
 .nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
 .logo{color:var(--y);font-weight:800;text-decoration:none;font-size:1.1rem}
 nav a{color:#fff;opacity:.8;margin-left:20px;font-size:.9rem;text-decoration:none}nav a:hover{opacity:1;color:var(--y)}
+nav a.code{background:var(--r);opacity:1;color:#fff;border-radius:99px;padding:4px 14px;font-weight:700}nav a.code:hover{background:var(--y);color:var(--ink)}
 .btn{display:inline-block;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:6px;padding:11px 22px;font:700 .95rem inherit;cursor:pointer;text-decoration:none;margin:0 8px 8px 0}
 .btn.alt{background:transparent;color:inherit;border-color:currentColor}.btn.y{background:var(--y);color:var(--ink);border-color:var(--y)}
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:650px}
