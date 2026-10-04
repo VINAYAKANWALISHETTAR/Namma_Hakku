@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NammaHakku (ನಮ್ಮ ಹಕ್ಕು): speak your problem, get a valid RTI letter</title>
+<meta name="description" content="Voice-first agentic AI that turns a spoken grievance in Kannada, Hindi or English into a validated RTI application for the right authority.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Noto+Sans+Kannada:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="nav"><div class="wrap"><a class="logo" href="#top">ನಮ್ಮ ಹಕ್ಕು NammaHakku</a>
+<nav><a href="#problem">Problem</a><a href="#demo">Try it</a><a href="#agents">Agents</a><a href="#safety">Safety</a><a href="#stack">Tech stack</a><a href="#maker">Creator</a></nav></div></header>
+<main id="top">
+<div class="hero">
+<div class="hl"><h1>Speak your problem. Know your rights. Take action.</h1>
+<div class="kn">ನಿಮ್ಮ ಸಮಸ್ಯೆ ಹೇಳಿ, ನಿಮ್ಮ ಹಕ್ಕು ತಿಳಿದುಕೊಳ್ಳಿ, ಕ್ರಮ ಕೈಗೊಳ್ಳಿ</div>
+<p>Say what went wrong in Kannada, Hindi or English. NammaHakku finds the right officer and writes an RTI application or grievance letter with checked legal citations.</p>
+<div><a class="btn" href="#demo">Try the live demo</a><a class="btn alt" href="#how">See how it works</a></div>
+<div class="facts"><span>3 languages</span><span>6 agents</span><span>Export only at C(d) ≥ 0.85</span><span>30-day appeal clock</span></div></div>
+<div class="hr">
+<div class="phone p1"><div class="scr"><h4>ನಮ್ಮ ಹಕ್ಕು</h4><div class="kn c">ನನ್ನ ಪಿಂಚಣಿ ಮೂರು ತಿಂಗಳಿಂದ ಬಂದಿಲ್ಲ</div><div class="wave"></div><button class="mic" aria-label="Microphone">🎙</button><div class="c">Listening in Kannada</div></div></div>
+<div class="phone p2"><div class="scr"><h4>We understood</h4>
+<div class="mini"><small>Issue</small><b>Pension not received</b></div>
+<div class="mini"><small>Send to</small><b>Social Welfare Department, PIO</b></div>
+<div class="mini"><small>Confidence</small><b>0.91</b> <span class="badge">Auto-routed</span></div>
+<div class="mini"><small>Law found</small><b>RTI Act, 2005, Sec. 6(1)</b></div>
+<button class="btn y" style="margin-top:auto">Draft my RTI</button></div></div>
+<div class="phone p3"><div class="scr"><h4>Your RTI is ready</h4><div class="doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div><span class="badge">Score 0.95</span> ready to export</div><button class="btn" style="margin:0">Download PDF</button></div></div>
+</div></div>
+
+<section id="problem"><div class="wrap"><h2>Citizens know what went wrong. They don't know what to do next.</h2>
+<p class="lead">A stopped pension, a pending ration card, a street nobody cleans. The hard part is the process, the authority and the legal wording.</p>
+<div class="cols" id="pain"></div>
+<div class="story"><h3>Lakshmi, 68, Hubballi</h3><p>Her pension stopped 3 months ago. She doesn't know who to write to, which law applies, or how to write it in English. In the end she gives up. NammaHakku is built so that doesn't happen.</p></div></div></section>
+
+<section id="how" class="mist"><div class="wrap"><h2>One spoken turn becomes a ready letter</h2>
+<p class="lead">Speak in your language and receive a grounded, validated document for the right authority. The same pipeline handles civic complaints with a configurable SLA clock. Phase 1 covers pension disbursal, PDS and ration cards, and municipal complaints.</p>
+<div class="cols" id="flow"></div></div></section>
+
+<section id="demo" class="dark"><div class="wrap"><h2>Try the agents yourself</h2>
+<p class="lead">Pick an example, type a problem, or press the mic (Chrome, Kannada). This page runs a front-end simulation of the pipeline with the same steps, thresholds and checklist as the real design. Output is a sample, not legal advice.</p>
+<div class="demo"><div class="phone"><div class="scr"><h4>ನಿಮ್ಮ ಸಮಸ್ಯೆ ಹೇಳಿ</h4><div class="chips" id="chips"></div>
+<textarea id="txt" rows="4" aria-label="Your problem" placeholder="Speak or type your problem"></textarea>
+<input id="nm" aria-label="Your name" placeholder="Your name (optional)">
+<button id="mic" class="mic" aria-label="Speak">🎙</button><button id="go" class="btn" style="margin:0">Run the agents</button><div id="st" class="c">Ready</div></div></div>
+<div class="out"><ol class="steps" id="steps"></ol><div id="res" aria-live="polite"></div></div></div></div></section>
+
+<section id="agents"><div class="wrap"><h2>Six narrow agents, one citizen request</h2>
+<p class="lead">NammaHakku is not one big model. Each agent has a trigger, a decision, a confidence threshold, a retry budget and an escalation path.</p>
+<div class="cols" id="agentGrid"></div>
+<h2 style="margin-top:70px">It decides when to act, ask, retry and escalate</h2>
+<div class="cols" id="gates" style="margin-top:30px"></div></div></section>
+
+<section class="mist"><div class="wrap"><h2>Law comes from retrieval, not memory</h2>
+<p class="lead">The model receives retrieved legal context instead of relying on memorised law. Meaning and exact legal terms are both matched, then ranked together.</p>
+<div class="cols" id="ret"></div></div></section>
+
+<section id="safety" class="dark"><div class="wrap two"><div><h2>Nothing leaves without passing the checks</h2>
+<p class="lead">Every claim must trace back to retrieved law. If a citation is not found, the system refuses or regenerates. Untick items to see how the score decides.</p>
+<p>Edge cases: insufficient grounding means refuse, ambiguous jurisdiction means show top candidates, a failed score means retry or manual review.</p></div>
+<div><div class="ck" id="ck"></div><div class="score" id="sc">1.00</div><div class="meter" id="mt"><i></i></div><b id="vd"></b></div></div></section>
+
+<section id="stack"><div class="wrap"><h2>Tech stack</h2>
+<p class="lead">Every layer is chosen for Indian-language voice input, grounded answers and citizen data safety.</p>
+<div class="cols" id="stk"></div>
+<h2 style="margin-top:60px">Security by design</h2><div class="cols" id="sec" style="margin-top:26px"></div></div></section>
+
+<section class="mist"><div class="wrap"><h2>Five things to remember</h2><div class="cols" id="take" style="margin-top:30px"></div>
+<p class="lead" style="margin:40px 0 0;font-weight:600">NammaHakku does not replace legal or government institutions. It makes them easier for citizens to navigate.</p></div></section>
+
+<section id="maker"><div class="wrap"><div class="me"><div class="av" aria-hidden="true">VW</div><div>
+<h2 style="margin:0">Vinayaka N Walishettar</h2><p>Solo builder, Visvesvaraya Technological University, Belagavi | Hubballi, Karnataka</p>
+<p>Problem statement: Productivity (agentic AI for civic access). Designed and built end to end: voice, retrieval, backend, safety layer and the Android-ready client.</p>
+<div class="tags"><span>React + TypeScript</span><span>FastAPI</span><span>RAG with pgvector</span><span>Android via Capacitor</span><span>Kannada, Hindi, English</span></div></div></div>
+<blockquote>Technology should not expect citizens to understand the system. It should make the system easy for citizens to navigate.</blockquote></div></section>
+</main>
+<footer><div class="wrap"><b>ನಮ್ಮ ಹಕ್ಕು NammaHakku (Our Right)</b><p>Built by Vinayaka N Walishettar, VTU Belagavi | Hubballi, Karnataka. The demo on this page is an interactive simulation. Generated letters are samples and not legal advice.</p></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const fill=(id,a)=>$('#'+id).innerHTML=a.map(([k,h,p])=>`<div><small>${k}</small><h3>${h}</h3><p>${p}</p></div>`).join('');
+fill('pain',[["Gap 1","No procedural knowledge","People know their problem but not how to write a formal RTI application. The phrasing, structure and legal language are unfamiliar."],["Gap 2","Hard to find the right authority","Finding the correct department, Public Information Officer (PIO) or jurisdiction takes knowledge most citizens don't have."],["Gap 3","Language barrier","Many people can explain a problem aloud in their own language but can't write it in formal English."],["Gap 4","Risk of wrong AI content","Generic AI tools can invent section numbers, deadlines or addressees, which makes a document legally unreliable."]]);
+fill('flow',[["ಮಾತನಾಡಿ","1. Speak","Say your problem in your own language."],["ಅರ್ಥಮಾಡಿ","2. Understand","AI identifies what kind of issue it is."],["ಅಧಿಕಾರಿಯನ್ನು ಹುಡುಕಿ","3. Resolve","Finds the right officer (PIO)."],["ದಾಖಲೆ ರಚಿಸಿ","4. Draft","Writes the RTI or complaint letter."],["ಪರಿಶೀಲಿಸಿ","5. Validate","Checks every legal citation."]]);
+const AG=[["A1","Transcribe","Voice to text","ನನ್ನ ಪಿಂಚಣಿ… becomes typed text"],["A2","Classify","Finds the issue category","Category = Pension"],["A3","Resolve","Finds authority / PIO","Social Welfare Dept PIO"],["A4","Retrieve","Fetches legal context","RTI Act + pension rules"],["A5","Draft","Writes a grounded document","RTI application with citations"],["A6","Validate","Citation guard + checklist","Score 0.95, ready to export"]];
+fill('agentGrid',AG.map(([a,n,d,e])=>[a,n,`${d}.<em>Example: ${e}</em>`]));
+fill('gates',[["Behaviour 1","Autonomous routing decision","Authority confidence Ci above 0.80 auto-routes. From 0.55 to 0.80 it asks the citizen to confirm. Below 0.55 it escalates.<em>Ci = 0.91 goes straight to the Pension PIO.</em>"],["Behaviour 2","Self-gating on confidence","If speech-to-text is shaky, the Drafting Agent refuses to draft and re-prompts the citizen.<em>Noisy audio: “Please say that again.”</em>"],["Behaviour 3","Time-triggered escalation","An SLA cron job acts without a new prompt. When the 30-day statutory deadline is breached, it auto-drafts a First Appeal.<em>Day 31, no reply: First Appeal is ready.</em>"],["Behaviour 4","Self-correction loop","The Compliance Validator retries a failed draft twice with a stricter prompt, then uses a template-only draft or manual review.<em>Missing PIO address: redraft, then it passes.</em>"]]);
+fill('ret',[["Dense retrieval","Matches meaning","Cosine similarity with text-embedding-3-large (bge-m3 self-hosted fallback), top-k = 8. “Pension stopped” also finds “pension disbursement” sections."],["BM25 sparse retrieval","Matches exact words","Okapi BM25 with k1 = 1.5 and b = 0.75. Keeps section numbers, department and PIO names, and legal terms word for word."],["RRF fusion","Merges both rankings","Reciprocal Rank Fusion (K = 60) combines both lists without comparable raw scores. A chunk ranked high by both rises to the top. Final top-4 chunks go to the drafting engine."]]);
+fill('stk',[["Frontend","React 18 + TypeScript","Vite, Tailwind CSS, and Capacitor as the Android wrapper."],["Backend API","FastAPI","Python 3.11, async I/O, Pydantic."],["Voice / ASR","Bhashini","Whisper-large-v3 as fallback."],["RAG / embeddings","LangChain","Custom hybrid retriever with text-embedding-3-large and bge-m3."],["Data / vector","PostgreSQL 15 + pgvector","On Supabase, ivfflat index with lists = 100."],["LLM / inference","Gemini / Groq","Long-context, instruction-following inference."]]);
+fill('sec',[["Sign-in","Phone OTP","Rate-limited."],["Row access","Row-Level Security","PostgreSQL RLS."],["Personal data","Encrypted at rest","pgcrypto, plus PII scrubbing before export."],["Sessions","1-hour access tokens","httpOnly refresh cookies."],["Audio","Deleted after 24 hours","Unless the citizen chooses to retain it."]]);
+fill('take',[["Takeaway 1","Voice-first accessibility","Describe a grievance naturally in Kannada, Hindi or English. No legal literacy needed."],["Takeaway 2","Automated authority resolution","Hybrid retrieval over a curated jurisdiction directory finds the department, authority and PIO."],["Takeaway 3","Grounded legal drafting","Legal sources are retrieved first. Every statute citation traces back to retrieved context."],["Takeaway 4","Safety through validation","Citation Guard, C(d) ≥ 0.85 and PII scrubbing stop unsupported or incomplete content."],["Takeaway 5","Extensible by design","The same agents can scale to more grievance categories, pan-India directories, live CPGRAMS submission and first-appeal automation."]]);
+document.querySelectorAll('.wave').forEach(w=>w.innerHTML=Array.from({length:16},(_,i)=>`<i style="animation-delay:${(i*.13)%1}s"></i>`).join(''));
+// Safety checklist
+const CK=[["Correct addressee (PIO / department)",.25],["Statutory citation present",.2],["Applicant identity block complete",.15],["Clear, specific information request",.2],["Fee / exemption clause where applicable",.1],["Date and place fields present",.1]];
+$('#ck').innerHTML=CK.map(([t,w])=>`<label><input type="checkbox" checked data-w="${w}"><span>${t}</span><b>${w.toFixed(2)}</b></label>`).join('');
+const calc=()=>{let s=0;document.querySelectorAll('#ck input:checked').forEach(c=>s+=+c.dataset.w);s=Math.round(s*100)/100;$('#sc').textContent=s.toFixed(2);$('#mt i').style.width=s*100+'%';$('#mt').className='meter'+(s<.85?' bad':'');$('#vd').textContent=s>=.85?'Exports: score is at or above 0.85':'Blocked: retry or manual review'};
+$('#ck').onchange=calc;calc();
+// Live demo (front-end simulation)
+const D={pension:{n:"Pension",dept:"Social Welfare Department, PIO",ci:.91,law:"RTI Act, 2005, Sec. 6(1) and 7(1)",subj:"Non-disbursal of pension",it:["The present status of my pension account and the date of the last payment","The reasons for non-payment during the last three months","The name and designation of the officer responsible for disbursal","The date by which the pending pension will be released"]},
+pds:{n:"PDS / Ration card",dept:"Food, Civil Supplies and Consumer Affairs Department, PIO",ci:.88,law:"RTI Act, 2005, Sec. 6(1) and 7(1)",subj:"Pending ration card application",it:["The current status of my ration card application","The reasons for the delay in issuing the card","The name and designation of the officer handling my file","The date by which the application will be decided"]},
+civic:{n:"Municipal complaint",dept:"City Municipal Corporation, PIO",ci:.74,law:"RTI Act, 2005, Sec. 6(1) and 7(1)",subj:"No action on a civic complaint",it:["The action taken on my complaint about the unattended civic issue","The name and designation of the officer responsible","The schedule fixed for resolving the issue"]}};
+const P=[["Kannada: pension","ನನ್ನ ಪಿಂಚಣಿ ಮೂರು ತಿಂಗಳಿಂದ ಬಂದಿಲ್ಲ"],["Kannada: ration card","ನನ್ನ ಪಡಿತರ ಚೀಟಿ ಅರ್ಜಿ ಬಹಳ ದಿನಗಳಿಂದ ಬಾಕಿ ಇದೆ"],["Kannada: civic","ನಮ್ಮ ರಸ್ತೆಯಲ್ಲಿ ಕಸ ತೆಗೆಯುತ್ತಿಲ್ಲ"],["Hindi: pension","मेरी पेंशन तीन महीने से नहीं आई"]];
+$('#chips').innerHTML=P.map(([l,t])=>`<button data-t="${t}">${l}</button>`).join('');
+$('#chips').onclick=e=>{if(e.target.dataset.t){$('#txt').value=e.target.dataset.t;run()}};
+$('#go').onclick=run;
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+$('#mic').onclick=()=>{if(!SR){$('#st').textContent='Voice input needs Chrome. Use an example or type.';return}const r=new SR();r.lang='kn-IN';r.onresult=e=>{$('#txt').value=e.results[0][0].transcript;run()};r.onerror=()=>$('#st').textContent='Could not hear you. Please say that again.';r.start();$('#st').textContent='Listening in Kannada'};
+let busy=0,doc='';
+async function run(){
+ const t=$('#txt').value.trim();if(busy)return;if(!t){$('#st').textContent='Say or type a problem first.';return}
+ busy=1;$('#res').innerHTML='';$('#st').textContent='Agents running';
+ const lang=/[\u0C80-\u0CFF]/.test(t)?'Kannada':/[\u0900-\u097F]/.test(t)?'Hindi':'English';
+ const k=/pension|ಪಿಂಚಣಿ|पेंशन/i.test(t)?'pension':/ration|pds|ಪಡಿತರ|राशन/i.test(t)?'pds':/road|garbage|waste|water|drain|light|ರಸ್ತೆ|ಕಸ|ನೀರು|सड़क|कचरा|पानी/i.test(t)?'civic':null;
+ const d=D[k],nm=$('#nm').value.trim(),
+ sc=d?[.25,.2,nm?.15:0,.2,.1,.1].reduce((a,b)=>a+b):0,
+ out=[`${lang} detected, text captured`,d?`Category = ${d.n}`:'Category unclear',d?d.dept:'No confident match',d?d.law:'',d?'RTI application drafted with citations':'',d?`Score ${sc.toFixed(2)}`:''];
+ $('#steps').innerHTML=AG.map(([a,n])=>`<li><b>${a}</b><div>${n}<br><span>Waiting</span></div></li>`).join('');
+ const L=[...document.querySelectorAll('#steps li')];
+ for(let i=0;i<(d?6:2);i++){L[i].className='on';await sleep(420);L[i].className='done';L[i].querySelector('span').textContent=out[i]}
+ if(!d){$('#res').innerHTML='<div class="meta"><div><small>Confidence Ci</small><b>0.41, below 0.55</b></div><div><small>Decision</small><b>Escalated, no draft</b></div></div><p class="cg">Please say that again. The drafting agent refuses to guess an authority.</p>';$('#st').textContent='Needs a clearer problem';busy=0;return}
+ const n=nm||'[Applicant name]',gate=d.ci>.8?'Auto-routed':d.ci>=.55?'Asks citizen to confirm':'Escalates';
+ doc=`To,\nThe Public Information Officer,\n${d.dept}\n\nSubject: Application under Section 6(1) of the Right to Information Act, 2005: ${d.subj}\n\nSir/Madam,\n\nI, ${n}, a resident of Karnataka, request the following information under the Right to Information Act, 2005:\n\n${d.it.map((x,i)=>`${i+1}. ${x}.`).join('\n')}\n\nTo the best of my knowledge this information is not exempt under Section 8. I enclose the prescribed application fee (applicants below the poverty line are exempt on furnishing proof). I request a reply within 30 days as required by Section 7(1).\n\nYours faithfully,\n${n}\n\nDate: ${new Date().toLocaleDateString('en-IN')}\nPlace: Hubballi`;
+ $('#res').innerHTML=`<div class="meta"><div><small>Issue</small><b>${d.n}</b></div><div><small>Authority</small><b>${d.dept}</b></div><div><small>Confidence Ci</small><b>${d.ci.toFixed(2)}</b> <span class="badge">${gate}</span></div></div><p class="cg">Citation Guard: ${d.law} found, continue. Completeness C(d) = ${sc.toFixed(2)}, ${sc>=.85?'export allowed':'retry or manual review'}.</p><div class="letter" id="letter"></div><button class="btn y" onclick="print()">Save as PDF</button><button class="btn alt" id="dl">Download .txt</button>`;
+ $('#letter').textContent=doc;
+ $('#dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([doc],{type:'text/plain'}));a.download='NammaHakku_RTI.txt';a.click()};
+ $('#st').textContent='Done';busy=0}
+</script>
+</body></html>
